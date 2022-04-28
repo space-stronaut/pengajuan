@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto&display=swap");
+body{
+  background-color: #fbfbfb;
+}
+/* navbar */
+nav {
+  width: 100%;
+  padding: 12px 0px;
+}
+.navbar-content {
+  display: flex;
+  align-items: center;
+}
+.nav-logo img {
+  width: 44px;
+}
+
+a.a-link-nav {
+  color: #515151;
+  font-family: "Poppins";
+  text-decoration: none;
+  font-weight: 500;
+}
+a.a-link-nav:hover{
+  color: #e78eba;
+}
+
+.dropdown-menu {
+  padding: 10px;
+}
+.nav-links-custom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-a-links {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  font-size: 18px;
+}
+
+/* Button */
+.button-primary {
+  text-decoration: none;
+  background-color: #e78eba;
+  color: #fff;
+  font-weight: 500;
+  padding: 16px 28px;
+  font-size: 18px;
+  border-radius: 8px;
+  font-family: Poppins;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+.button-link{
+  color: #e78eba;
+  text-decoration: none;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 500;
+}
+.button-link:hover{
+  color: #e78eba;
+}
+
+/* Gap Margin Padding */
+.gap-r-sm {
+  margin-right: 34px;
+}
+.gap-r-xs {
+  margin-right: 12px;
+}
+
+/* Hero section */
+section.hero-section {
+  background-color: #f4fcff;
+  height: 90vh;
+}
+.content-hero{
+  margin-top: 42px;
+}
+.text-hero{
+  margin-top: 124px;
+}
+
+/* Features */
+section.features{
+  margin-top: 76px;
+}
+.card-feature{
+background-color: #fff;
+padding: 16px;
+}
+
+/* blogs */
+section.blogs{
+  margin-top: 132px;
+}
+.blog-read{
+  font-family: Poppins;
+  color: #515151;
+  font-size: 18px;
+}
+
+
+/* Greeting */
+section.greeting{
+  margin-top: 76px;
+}
+/* Information */
+section.information{
+  margin-top: 76px;
+}
+/* heading */
+h1.h1-custom {
+  font-family: Poppins;
+  font-size: 46px;
+  font-weight: 700;
+  color: #1f3368;
+}
+h2.h2-custom {
+  font-family: Poppins;
+  font-size:32px;
+  font-weight: 700;
+  color: #1f3368;
+}
+h5.h5-custom {
+  font-family: Poppins;
+  font-size:20px;
+  font-weight: 700;
+  color: #1f3368;
+}
+h6.h6-custom {
+  font-family: Poppins;
+  font-size:18px;
+  font-weight: 700;
+  color: #1f3368;
+}
+p.low-emp {
+  font-family: Roboto;
+  width: 67%;
+  font-size: 16px;
+  color: #818181;
+}
+p.text-lg {
+  font-family: Roboto;
+  font-size: 20px;
+}
+p.text-md {
+  font-family: Poppins;
+  font-size: 18px;
+  color: #515151;
+  margin: 0;
+}
+p.low-emp-kerning-lg {
+  font-family: Roboto;
+  letter-spacing: 0.6em;
+  font-size: 16px;
+  color: #818181;
+}
+p.low-emp-100 {
+  font-family: Roboto;
+  width:100%;
+  font-size: 16px;
+  color: #818181;
+}
+p.low-emp-sm {
+  font-family: Roboto;
+  font-size: 14px;
+  color: #818181;
+}
+.text-pink{
+  color: #e78eba !important;
+}
+.text-blue{
+  color: #1f3368 !important;
+}
+
+/* utilities */
+.my-16{
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.mt-gap{
+  margin-top: 32px;
+}
+.mt-lg{
+  margin-top: 76px;
+}
+.no-bg{
+  background-color: transparent !important;
+}
+/* footer */
+footer{
+  margin-top: 132px;
+}
+
+/* Input */
+input.input-custom{
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-family: Poppins;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #E5E5E5;
+}
+textarea.textarea-custom{
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-family: Poppins;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #E5E5E5;
+}
+
+
+/* pelayanan */
+.card-sm{
+  padding: 24px 32px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.card-sm:hover{
+  box-shadow: 0px 9px 30px rgba(0, 0, 0, 0.04);
+}
+@media (max-width: 992px) {
+  /* navbar */
+  .navbar-content {
+    justify-content: space-between;
+  }
+  .nav-links-custom {
+    flex-direction: column;
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    height: 40vh;
+    transform: translateY(-100%);
+    transition: 0.3s;
+  }
+  .nav-active {
+    transition: 0.3s;
+    transform: translateY(0);
+  }
+  .nav-a-links {
+    margin-top: 30px;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60%;
+    width: 100%;
+  }
+  .nav-toggle {
+    z-index: 2;
+  }
+  /* hero */
+
+  img.img-hero{
+    width: 400px;
+  }
+  .text-hero{
+    margin-top: 54px;
+  }
+  section.hero-section {
+    background-color: #f4fcff;
+    height: 110vh;
+  }
+
+  /* heading & text */
+p.low-emp{
+  width: 100%;
+}
+}

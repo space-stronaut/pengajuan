@@ -25,11 +25,30 @@
                         <input type="text" name="prodi" class="form-control" value="{{ $pengajuan->prodi }}">
                     </div>
                     
-                    <div class="form-group inline container1">
+                    <div class="form-group container1">
                         {{-- <h1 class="add_form_field btn btn-primary">Add New Field &nbsp; 
                           <span style="font-size:16px; font-weight:bold;">+ </span>
                         </h1> --}}
                         @foreach ($items as $item)
+                        <div class="row mt-2">
+                            <input type="hidden" name="id[]" value="{{ $item->id }}">
+                            <div class="col">
+                                <input type="text" name="kegiatan[]" class="form-control" value="{{ $item->nama_kegiatan }}" placeholder="Nama Kegiatan"/>
+                            </div>
+                            <div class="col">
+                                <input type="number" name="jumlah_pengajuan[]" class="form-control" value="{{ $item->jumlah_pengajuan }}" placeholder="Jumlah Pengajuan"/>
+                            </div>
+                            <div class="col">
+                                <select name="coa_id[]" id="" class="form-control">
+                                    <option value="">Pilih COA...</option>
+                                    @foreach ($coas as $coa)
+                                        <option value="{{ $coa->id }}" {{ $coa->id == $item->coa_id ? 'selected' : '' }}>{{ $coa->nama_akun }} - {{ $coa->nominal_anggaran }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                          </div>
+                          @endforeach
+                        {{-- @foreach ($items as $item)
                             <div class="form-group row">
                                 <input type="hidden" name="id[]" value="{{ $item->id }}">
                                 <input type="text" name="kegiatan[]" class="form-control" value="{{ $item->nama_kegiatan }}"/>
@@ -41,7 +60,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                        @endforeach
+                        @endforeach --}}
                     </div>
                     <div>
                         <button class="btn btn-primary">Submit</button>

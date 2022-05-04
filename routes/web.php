@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CoaController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PengajuanController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('coa', CoaController::class);
 // Route::get('/coa', [CoaController::class, 'index']);
 Route::resource('pengajuan', PengajuanController::class);
+Route::post('/pengajuan/validasi/{id}', [PengajuanController::class, 'validasi'])->name('pengajuan.validasi');
+Route::get('/dashboard', [DashboardController::class, 'index']);

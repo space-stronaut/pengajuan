@@ -23,7 +23,28 @@
                         <label for="">Prodi</label>
                         <input type="text" name="prodi" class="form-control">
                     </div>
-                    <div class="form-group inline container1">
+                    <div class="form-group container1">
+                        <h1 class="add_form_field btn btn-primary">Add New Field &nbsp; 
+                            <span style="font-size:16px; font-weight:bold;">+ </span>
+                          </h1>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" name="kegiatan[]" class="form-control" placeholder="Nama Kegiatan"/>
+                            </div>
+                            <div class="col">
+                                <input type="number" name="jumlah_pengajuan[]" class="form-control" placeholder="Jumlah Pengajuan"/>
+                            </div>
+                            <div class="col">
+                                <select name="coa_id[]" id="" class="form-control">
+                                    <option value="">Pilih COA...</option>
+                                    @foreach ($coas as $item)
+                                        <option value="{{ $item->id }}">{{ $item->nama_akun }} - {{ $item->nominal_anggaran }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                          </div>
+                    </div>
+                    {{-- <div class="form-group inline container1">
                         <h1 class="add_form_field btn btn-primary">Add New Field &nbsp; 
                           <span style="font-size:16px; font-weight:bold;">+ </span>
                         </h1>
@@ -37,7 +58,7 @@
                                 @endforeach
                             </select>
                         </div>
-                    </div>
+                    </div> --}}
                     <div>
                         <button class="btn btn-primary">Submit</button>
                     </div>
@@ -68,7 +89,7 @@
         e.preventDefault();
         if (x < max_fields) {
             x++;
-            $(wrapper).append('<div><input type="text" name="kegiatan[]" class="form-control"/><input type="number" name="jumlah_pengajuan[]" class="form-control"/><select name="coa_id[]" id="" class="form-control"><option value="">Choose...</option>@foreach ($coas as $item)<option value="{{ $item->id }}">{{ $item->nama_akun }} - {{ $item->nominal_anggaran }}</option>@endforeach</select><a href="#" class="delete">Delete</a></div>'); //add input box
+            $(wrapper).append('<div class="row mt-2"><div class="col"><input type="text" name="kegiatan[]" placeholder="Nama Kegiatan" class="form-control"/></div><div class="col"><input type="number" placeholder="Jumlah Pengajuan" name="jumlah_pengajuan[]" class="form-control"/></div><div class="col"><select name="coa_id[]" id="" class="form-control"><option value="">Pilih COA...</option>@foreach ($coas as $item)<option value="{{ $item->id }}">{{ $item->nama_akun }} - {{ $item->nominal_anggaran }}</option>@endforeach</select></div></div>');
         } else {
             alert('You Reached the limits')
         }

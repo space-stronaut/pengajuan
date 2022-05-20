@@ -8,9 +8,11 @@
                     <div>
                         Pengajuan
                     </div>
+                    @if (Auth::user()->jabatan != 'ppa')
                     <div>
                         <a href="{{ route('pengajuan.create') }}" class="btn btn-primary">Create</a>
                     </div>
+                    @endif
                 </div>
             </div>
             <div class="card-body">
@@ -60,7 +62,7 @@
                                     <div>
                                         <a href="{{ route('pengajuan.show', $item->id) }}" class="btn btn-info ml-2">Detail</a>
                                     </div>
-                                    @if ($item->status != 'selesai')
+                                    @if ($item->status != 'selesai' && Auth::user()->jabatan != 'ppa')
                                     <div>
                                         <a href="{{ route('pengajuan.edit', $item->id) }}" class="btn btn-success ml-2">Edit</a>
                                     </div>

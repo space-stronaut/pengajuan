@@ -58,6 +58,10 @@
                                 </td>
                                 <td class="d-flex align-items-center">
                                     <div>
+                                        <a href="{{ route('pengajuan.show', $item->id) }}" class="btn btn-info ml-2">Detail</a>
+                                    </div>
+                                    @if ($item->status != 'selesai')
+                                    <div>
                                         <a href="{{ route('pengajuan.edit', $item->id) }}" class="btn btn-success ml-2">Edit</a>
                                     </div>
                                     <div>
@@ -67,6 +71,7 @@
                                             <button class="btn btn-danger ml-2">Delete</button>
                                         </form>
                                     </div>
+                                    @endif
                                     <div class="row">
                                         @if ($item->status == 'proses')
                                             <form action="{{ route('pengajuan.validasi', $item->id) }}" method="post">

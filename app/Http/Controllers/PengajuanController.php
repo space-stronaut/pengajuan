@@ -75,7 +75,10 @@ class PengajuanController extends Controller
      */
     public function show($id)
     {
-        //
+        $pengajuan = Pengajuan::find($id);
+        $items = PengajuanItem::where('pengajuan_id', $id)->get();
+
+        return view('pengajuan.show', compact('pengajuan', 'items'));
     }
 
     /**

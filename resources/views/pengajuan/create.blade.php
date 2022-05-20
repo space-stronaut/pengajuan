@@ -21,6 +21,12 @@
                     <input type="hidden" name="status" value="proses">
                     <div class="form-group">
                         <label for="">Prodi</label>
+                        <select name="prodi" id="" class="form-control">
+                            <option value="">Choose Prodi...</option>
+                            <option value="Sistem Informasi">Sistem Informasi</option>
+                            <option value="Teknik Informatika">Teknik Informatika</option>
+                            <option value="Fakultas">Fakultas/option>
+                        </select>
                         <input type="text" name="prodi" class="form-control">
                     </div>
                     <div class="form-group container1">

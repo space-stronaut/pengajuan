@@ -35,15 +35,6 @@
 
                     
                 </form>
-                <div class="container1">
-                    <h1 class="add_form_field btn btn-primary">Add New Field &nbsp; 
-                      <span style="font-size:16px; font-weight:bold;">+ </span>
-                    </h1>
-                    <div>
-                        <input type="text" name="mytext[]" />
-                        <input type="number" name="mytext[]" />
-                    </div>
-                </div>
             </div>
         </div>
     </div>

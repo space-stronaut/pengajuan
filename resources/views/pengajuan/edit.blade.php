@@ -22,7 +22,12 @@
                     <input type="hidden" name="status" value="proses">
                     <div class="form-group">
                         <label for="">Prodi</label>
-                        <input type="text" name="prodi" class="form-control" value="{{ $pengajuan->prodi }}">
+                        <select name="prodi" id="" class="form-control">
+                            <option value="">Choose Prodi...</option>
+                            <option value="Sistem Informasi" {{ $pengajuan->prodi == "Sistem Informasi" ? 'selected' : '' }}>Sistem Informasi</option>
+                            <option value="Teknik Informatika" {{ $pengajuan->prodi == "Teknik Informatika" ? 'selected' : '' }}>Teknik Informatika</option>
+                            <option value="Fakultas" {{ $pengajuan->prodi == "Fakultas" ? 'selected' : '' }}>Fakultas/option>
+                        </select>
                     </div>
                     
                     <div class="form-group container1">

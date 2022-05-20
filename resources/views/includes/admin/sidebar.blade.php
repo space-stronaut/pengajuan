@@ -43,6 +43,7 @@
                             </p>
                         </a>
                     </li>
+                @if (Auth::user()->jabatan == 'wd2')
                 <li class="nav-item">
                     <a href="{{ route('coa.index') }}" class="nav-link {{ Request::is('coa') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-home"></i>
@@ -51,6 +52,7 @@
                         </p>
                     </a>
                 </li>
+                @endif
 
                 <li class="nav-item">
                     <a href="{{ route('pengajuan.index') }}" class="nav-link {{ Request::is('pengajuan') ? 'active' : '' }}">

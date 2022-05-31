@@ -28,7 +28,7 @@ class PengajuanController extends Controller
      */
     public function create()
     {
-        $coas = Coa::all();
+        $coas = Coa::where('status', 'disetujui')->get();
 
         return view('pengajuan.create', compact('coas'));
     }
@@ -152,9 +152,26 @@ class PengajuanController extends Controller
 
     public function validasi(Request $request, $id)
     {
-        Pengajuan::find($id)->update([
-            'status' => $request->status
-        ]);
+        if ($request->status === 'diterima') {
+            $data = $request->all();
+
+            if ($request->file('ttd')) {
+                $data['ttd'] = $request->file('ttd')->store(
+                    'ttd', 'public'
+                    );
+            }
+
+            Pengajuan::find($id)->update([
+                'status' => $request->status,
+                'ttd' => $data['ttd']
+            ]);
+
+            // dd($request->all());
+        }else{
+            Pengajuan::find($id)->update([
+                'status' => $request->status,
+            ]);
+        }
 
         return redirect()->back();
     }

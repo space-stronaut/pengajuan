@@ -92,4 +92,13 @@ class CoaController extends Controller
 
         return redirect()->back();
     }
+
+    public function validasi(Request $request, $id)
+    {
+        Coa::find($id)->update([
+            'status' => $request->status
+        ]);
+
+        return redirect()->route('coa.index');
+    }
 }

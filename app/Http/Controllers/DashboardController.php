@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Coa;
+use App\Models\Pengajuan;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,7 +15,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $proses = count(Pengajuan::where('status', 'proses')->get());
+        $selesai = count(Pengajuan::where('status', 'selesai')->get());
+        $terima = count(Pengajuan::where('status', 'diterima')->get());
+        $coa = count(Coa::where('status', 'disetujui')->get());
+
+        return view('dashboard', compact('proses', 'selesai', 'terima', 'coa'));
     }
 
     /**

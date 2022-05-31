@@ -17,6 +17,7 @@
                <form action="{{ route('coa.store') }}" method="post">
                     @csrf
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                    <input type="hidden" name="status" value="proses">
                     <div class="form-group">
                         <label for="">No Akun</label>
                         <input type="number" name="noakun" class="form-control">

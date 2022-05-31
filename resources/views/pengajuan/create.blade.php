@@ -27,7 +27,6 @@
                             <option value="Teknik Informatika">Teknik Informatika</option>
                             <option value="Fakultas">Fakultas/option>
                         </select>
-                        <input type="text" name="prodi" class="form-control">
                     </div>
                     <div class="form-group container1">
                         <h1 class="add_form_field btn btn-primary">Add New Field &nbsp; 

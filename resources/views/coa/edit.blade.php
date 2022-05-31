@@ -18,6 +18,7 @@
                     @csrf
                     @method('put')
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                    <input type="hidden" name="status" value="{{ $data->status }}">
                     <div class="form-group">
                         <label for="">No Akun</label>
                         <input type="number" name="noakun" class="form-control" value="{{ $data->noakun }}">

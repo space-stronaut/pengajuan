@@ -60,6 +60,24 @@
                                             <button class="btn btn-danger">Delete</button>
                                         </form>
                                     </div>
+                                        @if ($item->status == 'proses' && Auth::user()->jabatan != 'wd2')
+                                        <div>
+                                            <form action="{{ route('coa.validasi', $item->id) }}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="status" value="disetujui">
+                                                <button class="btn btn-success ml-2">Terima</button>
+                                            </form>
+                                        </div>
+                                        <div>
+                                            <form action="{{ route('pengajuan.validasi', $item->id) }}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="status" value="ditolak">
+                                                <button class="btn btn-danger ml-2">Tolak</button>
+                                            </form>
+                                        </div>
+                                            @else
+                                            <div></div>
+                                        @endif
                                 </td>
                             </tr>
                         @empty

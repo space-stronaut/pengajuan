@@ -28,4 +28,5 @@ Route::resource('coa', CoaController::class);
 // Route::get('/coa', [CoaController::class, 'index']);
 Route::resource('pengajuan', PengajuanController::class);
 Route::post('/pengajuan/validasi/{id}', [PengajuanController::class, 'validasi'])->name('pengajuan.validasi');
+Route::post('/coa/validasi/{id}', [CoaController::class, 'validasi'])->name('coa.validasi');
 Route::get('/dashboard', [DashboardController::class, 'index']);

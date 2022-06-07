@@ -46,7 +46,7 @@
                                 <input type="number" class="form-control" value="{{ $item->jumlah_pengajuan }}" placeholder="Jumlah Pengajuan" disabled/>
                             </div>
                             <div class="col">
-                                <input type="number" name="realisasi[]" id="" class="form-control">
+                                <input type="number" name="realisasi[]" id="" class="form-control" value="{{ $item->realisasi }}">
                             </div>
                           </div>
                           @endforeach

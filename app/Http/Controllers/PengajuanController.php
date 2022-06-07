@@ -155,15 +155,15 @@ class PengajuanController extends Controller
         if ($request->status === 'diterima') {
             $data = $request->all();
 
-            if ($request->file('ttd')) {
-                $data['ttd'] = $request->file('ttd')->store(
-                    'ttd', 'public'
-                    );
-            }
+            // if ($request->file('ttd')) {
+            //     $data['ttd'] = $request->file('ttd')->store(
+            //         'ttd', 'public'
+            //         );
+            // }
 
             Pengajuan::find($id)->update([
                 'status' => $request->status,
-                'ttd' => $data['ttd']
+                // 'ttd' => $data['ttd']
             ]);
 
             // dd($request->all());
@@ -174,5 +174,28 @@ class PengajuanController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function addRealisasi($id){
+        $pengajuan = Pengajuan::find($id);
+        $coas = Coa::all();
+        $items = PengajuanItem::where('pengajuan_id', $id)->get();
+
+        return view('pengajuan.realisasi', compact('pengajuan', 'coas', 'items'));
+    }
+
+    public function storeRealisasi(Request $request){
+        $ids = $request->id;
+        $realisasi = $request->realisasi;
+        for ($i=0; $i < count($ids); $i++) { 
+            PengajuanItem::find($ids[$i])->update([
+                'realisasi' => $realisasi[$i],
+            ]);
+            // $ids[$i];
+        }
+
+        // dd($request->realisasi[2]);
+
+        return redirect()->route('pengajuan.index');
     }
 }

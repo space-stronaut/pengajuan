@@ -30,3 +30,5 @@ Route::resource('pengajuan', PengajuanController::class);
 Route::post('/pengajuan/validasi/{id}', [PengajuanController::class, 'validasi'])->name('pengajuan.validasi');
 Route::post('/coa/validasi/{id}', [CoaController::class, 'validasi'])->name('coa.validasi');
 Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/realisasi/{id}', [PengajuanController::class, 'addRealisasi'])->name('pengajuan.realisasi');
+Route::post('/pengajuan/realisasi', [PengajuanController::class, 'storeRealisasi'])->name('pengajuan.realisasi.store');

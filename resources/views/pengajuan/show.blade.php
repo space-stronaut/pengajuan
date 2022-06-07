@@ -52,6 +52,8 @@
                         <table style="width: 100%" border="1">
                             @foreach ($items as $item)
                             <tr>
+                                <th>{{ $item->noakun }}</th>
+                                <th>{{ $item->nama_akun }}</th>
                                 <th>{{ $item->nama_kegiatan }}</th>
                                 <th>Rp.{{ $item->jumlah_pengajuan }}</th>
                             </tr>

@@ -43,7 +43,7 @@
                                 <select name="coa_id[]" id="" class="form-control">
                                     <option value="">Pilih COA...</option>
                                     @foreach ($coas as $item)
-                                        <option value="{{ $item->id }}">{{ $item->nama_akun }} - {{ $item->nominal_anggaran }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->noakun }} - {{ $item->nama_akun }} - {{ $item->nama_akun }} - {{ $item->nominal_anggaran }}</option>
                                     @endforeach
                                 </select>
                             </div>

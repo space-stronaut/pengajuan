@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Coa;
 use App\Models\Pengajuan;
+use PDF;
 use App\Models\PengajuanItem;
 use Illuminate\Http\Request;
 
@@ -197,5 +198,13 @@ class PengajuanController extends Controller
         // dd($request->realisasi[2]);
 
         return redirect()->route('pengajuan.index');
+    }
+
+    public function printPdf(){
+        $datas = Pengajuan::all();
+ 
+    	$pdf = PDF::loadview('pengajuan_pdf',['datas'=>$datas]);
+    	return $pdf->download('laporan-pengajuan.pdf');
+        // dd('halo');
     }
 }

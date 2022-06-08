@@ -62,6 +62,9 @@
                                     <div>
                                         <a href="{{ route('pengajuan.show', $item->id) }}" class="btn btn-info ml-2">Detail</a>
                                     </div>
+                                    <div>
+                                        <a href="{{ route('pdf') }}" class="btn btn-info ml-2">Cetak</a>
+                                    </div>
                                     @if ($item->status != 'selesai' && Auth::user()->jabatan != 'ppa')
                                     {{-- <div>
                                         <a href="{{ route('pengajuan.edit', $item->id) }}" class="btn btn-success ml-2">Edit</a>

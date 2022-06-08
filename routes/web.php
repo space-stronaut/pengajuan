@@ -3,6 +3,7 @@
 use App\Http\Controllers\CoaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PengajuanController;
+use App\Models\Pengajuan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,4 @@ Route::post('/coa/validasi/{id}', [CoaController::class, 'validasi'])->name('coa
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/realisasi/{id}', [PengajuanController::class, 'addRealisasi'])->name('pengajuan.realisasi');
 Route::post('/pengajuan/realisasi', [PengajuanController::class, 'storeRealisasi'])->name('pengajuan.realisasi.store');
+Route::get('/pdf', [PengajuanController::class, 'printPdf'])->name('pdf');

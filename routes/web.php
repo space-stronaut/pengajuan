@@ -33,4 +33,4 @@ Route::post('/coa/validasi/{id}', [CoaController::class, 'validasi'])->name('coa
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/realisasi/{id}', [PengajuanController::class, 'addRealisasi'])->name('pengajuan.realisasi');
 Route::post('/pengajuan/realisasi', [PengajuanController::class, 'storeRealisasi'])->name('pengajuan.realisasi.store');
-Route::get('/pdf', [PengajuanController::class, 'printPdf'])->name('pdf');
+Route::get('/pdf/{id}', [PengajuanController::class, 'printPdf'])->name('pdf');

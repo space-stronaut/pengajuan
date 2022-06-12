@@ -200,10 +200,11 @@ class PengajuanController extends Controller
         return redirect()->route('pengajuan.index');
     }
 
-    public function printPdf(){
-        $datas = Pengajuan::all();
+    public function printPdf($id){
+        $pengajuan = Pengajuan::find($id);
+        $items = PengajuanItem::where('pengajuan_id', $id)->get();
  
-    	$pdf = PDF::loadview('pengajuan_pdf',['datas'=>$datas]);
+    	$pdf = PDF::loadview('pengajuan_pdf',compact('pengajuan', 'items'));
     	return $pdf->download('laporan-pengajuan.pdf');
         // dd('halo');
     }
